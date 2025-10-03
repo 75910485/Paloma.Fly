@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Palomas Fly</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <!-- Logo con imagen -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/logo.fly.png" alt="Palomas Fly">
+      </a>
+    </div>
+
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Destinos</a></li>
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Ayuda</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+
+    <a href="login.html" class="btn">Iniciar Sesión</a>
+  </nav>
+</header>
+
+
+
+  <main class="form-container">
+    <h1>Crea tu <span class="blue">Cuenta</span></h1>
+    <p>Únete a <span class="blue">Palomas Fly</span> y viaja con beneficios exclusivos</p>
+
+    <form id="formRegistro">
+      <input type="text" placeholder="Nombres Completos" required>
+      <input type="text" placeholder="Apellidos Completos" required>
+      <input type="text" placeholder="Número de documento" required>
+      <input type="email" placeholder="Correo Electrónico" required>
+      <input type="tel" placeholder="Teléfono" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <input type="password" id="password2" placeholder="Repetir Contraseña" required>
+
+      <label>
+        <input type="checkbox" required>
+        Acepto los <a href="#">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a>
+      </label>
+
+      <button type="submit" class="btn">Registrarme</button>
+    </form>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Palomas Fly</p>
+    </div>
+  </footer>
+</body>
+</html>

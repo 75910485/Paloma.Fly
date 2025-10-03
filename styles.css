@@ -1,0 +1,152 @@
+/* Logo paloma fly */
+.logo img {
+  height: 80px;   
+  width: auto;
+  display: block;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fcf6ed;
+  color: #222;
+}
+
+/* --- Navbar --- */
+header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 120px;   /* separación entre los items */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+/* ---- LINKS DEL MENÚ ---- */
+nav ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+
+/* Línea oculta debajo */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0; /* justo debajo del texto */
+  width: 0%;
+  height: 2px;
+  background-color: #0056b3;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Al pasar el mouse aparece la raya */
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Cambio de color al hover */
+nav ul li a:hover {
+  color: #0056b3;
+}
+
+/* Botón de sesión */
+.btn {
+  background: #0056b3;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background: #004494;
+}
+
+/* --- FORMULARIOS --- */
+.form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+input, button {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.blue {
+  color: #0056b3;
+}
+
+/* --- FOOTER --- */
+footer {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+.google-btn button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;  
+  background: #fff;
+  color: #444;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+  /* width: 100%;  <-- elimínalo */
+  margin: 0 auto; /* centra el botón */
+}
+
+
+.google-btn button img {
+  width: 20px;
+  height: 20px;
+}
+
+.google-btn button:hover {
+  background: #f5f5f5;
+}
