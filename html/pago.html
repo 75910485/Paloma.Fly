@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palomas Fly - Pago</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/destinos.css"> 
+    <link rel="stylesheet" href="../css/pago.css"> <script defer src="../js/pago.js"></script> </head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="../img/logo.fly.png" alt="Palomas Fly"></a> 
+            </div>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Cerrar Sesion</a></li>
+            </ul>
+            <a href="#" class="btn mi-perfil">Mi perfil</a>
+        </nav>
+    </header>
+
+    <main class="container pago-container">
+        <section class="metodo-pago">
+            <h1>Elige tu Método de Pago</h1>
+            <div class="logos-pago">
+                <img src="../img/tarjetas_pago.png" alt="Métodos de pago"> 
+                </div>
+            
+            <div class="formulario-pago">
+                <div class="grupo-tarjeta">
+                    <label for="numeroTarjeta">Tarjeta de Debito / Credito</label>
+                    <input type="text" id="numeroTarjeta" placeholder="1234 1234 1234 1234" maxlength="19">
+                </div>
+                
+                <div class="grupo-fecha">
+                    <label for="fechaVencimiento">Fecha de vencimiento</label>
+                    <input type="text" id="fechaVencimiento" placeholder="MM / AA" maxlength="5">
+                </div>
+                
+                <div class="grupo-cvv">
+                    <label for="cvv">CVV</label>
+                    <input type="password" id="cvv" placeholder="CVV" maxlength="4">
+                </div>
+            </div>
+        </section>
+
+        <section class="resumen-compra-pago">
+            <h1>Resumen de tu compra</h1>
+            <div class="detalles-resumen">
+                <p><strong>Origen:</strong> <span id="resumen-origen"></span></p>
+                <p><strong>Destino:</strong> <span id="resumen-destino"></span></p>
+                <p><strong>Fecha:</strong> <span id="resumen-fecha"></span></p>
+                <p><strong>Hora:</strong> <span id="resumen-hora"></span></p>
+                <hr>
+                <p><strong>Pasajeros</strong></p>
+                <p class="pasajero-detalle">
+                    <span id="resumen-pasajero-nombre">Lucas Condori</span> <br>
+                    <span id="resumen-asientos"></span>
+                </p>
+                <hr>
+                <div class="costo-detalle">
+                    <p><strong>Detalles del costo</strong></p>
+                    <p class="precio-final">Precio: <span id="resumen-precio"></span></p>
+                </div>
+                <button class="btn-pagar-final">Pagar</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        </footer>
+</body>
+</html>

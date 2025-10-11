@@ -12,14 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
         "15", "18", "", "21", "24"
     ];
 
+
     function renderizarMapa(mapaContenedor, asientosBase, asientosSeleccionados) {
-        mapaContenedor.innerHTML = ''; 
+        mapaContenedor.innerHTML = '';
         let seatIndex = 0;
 
         // Bucle para construir la estructura del mapa
         for (let i = 0; i < asientosBase.length; i++) {
             const num = asientosBase[i];
-            
+
             if (num === "") {
                 // Espacio de pasillo
                 const pasillo = document.createElement("div");
@@ -31,13 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 asiento.classList.add("asiento");
                 asiento.setAttribute("data-num", num);
                 asiento.textContent = num;
-                
-                // Aplicar estado 'seleccionado' si ya lo estaba
+
                 if (asientosSeleccionados.includes(num)) {
                     asiento.classList.add("seleccionado");
                 }
 
-                //  Asiento '06' del piso 1 siempre ocupado como ejemplo por ahora
                 if (num === "06" || num === "18") {
                     asiento.classList.add("ocupado");
                 }
@@ -46,36 +45,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 seatIndex++;
             }
         }
-        
-        // Símbolos de conductor y baño al final del 1er piso
-        if (asientosBase === asientosPiso1) {
-             const conductor = document.createElement("div");
-             conductor.classList.add("simbolo-bus");
-             conductor.setAttribute("title", "Asiento Conductor");
-             conductor.innerHTML = '<i class="fa-solid fa-person"></i>';
-             mapaContenedor.appendChild(conductor);
 
-             const bano = document.createElement("div");
-             bano.classList.add("simbolo-bus");
-             bano.setAttribute("title", "Baño");
-             bano.innerHTML = '<i class="fa-solid fa-toilet"></i>';
-             mapaContenedor.appendChild(bano);
+        if (asientosBase === asientosPiso1) {
+            const conductor = document.createElement("div");
+            conductor.classList.add("simbolo-bus");
+            conductor.setAttribute("title", "Asiento Conductor");
+            conductor.innerHTML = '<i class="fa-solid fa-person"></i>';
+            mapaContenedor.appendChild(conductor);
+
+            const bano = document.createElement("div");
+            bano.classList.add("simbolo-bus");
+            bano.setAttribute("title", "Baño");
+            bano.innerHTML = '<i class="fa-solid fa-toilet"></i>';
+            mapaContenedor.appendChild(bano);
         }
     }
-    
-    // Función para guardar y recuperar el estado de los asientos por tarjeta
     function getCardState(card) {
         if (!card.state) {
             card.state = {
                 pisoActual: '1',
-                piso1: [], // Asientos seleccionados en el piso 1
-                piso2: []  // Asientos seleccionados en el piso 2
+                piso1: [], 
+                piso2: [] 
             };
         }
         return card.state;
     }
 
-    // Función para calcular y actualizar el resumen de compra
     function actualizarResumen(card) {
         const state = getCardState(card);
         const seleccionadosTotal = [...state.piso1, ...state.piso2];
@@ -84,8 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const lista = ladoDerecho.querySelector(".seleccionados");
         const total = ladoDerecho.querySelector(".precio-total");
         const cantidadAsientos = ladoDerecho.querySelector(".asientos-texto");
-        
-        lista.innerHTML = ""; // Limpiar la lista de burbujas
+
+        lista.innerHTML = ""; 
 
         if (seleccionadosTotal.length === 0) {
             lista.textContent = "Ninguno";
@@ -94,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Crear las "burbujas" de asientos seleccionados
         seleccionadosTotal.sort((a, b) => parseInt(a) - parseInt(b)).forEach(num => {
             const asientoNum = document.createElement("div");
             asientoNum.classList.add("asiento-num");
@@ -102,12 +96,41 @@ document.addEventListener("DOMContentLoaded", () => {
             lista.appendChild(asientoNum);
         });
 
-        // Actualizar el precio total y la cantidad de asientos
-        total.textContent = `S/${(seleccionadosTotal.length * precioPorAsiento).toFixed(2)}`;
+        const precioFinal = seleccionadosTotal.length * precioPorAsiento;
+        total.textContent = `S/${precioFinal.toFixed(2)}`;
         cantidadAsientos.textContent = `*${seleccionadosTotal.length} asientos`;
+
+        card.compraInfo = {
+            origen: "Lima(Atocongo)",
+            destino: "Arequipa",
+            fecha: document.querySelector('.busqueda input[type="text"][value="11-Sep-25"]').value, // Usar el valor del input de la búsqueda
+            hora: card.querySelector('.info-viaje .izquierda span').textContent.split("→")[0].trim(),
+            asientos: seleccionadosTotal.join(", "),
+            precioTotal: precioFinal.toFixed(2)
+        };
     }
 
-    // --- Abrir / cerrar secciones de asientos ---
+    document.querySelectorAll(".card").forEach(card => {
+        const pagarBoton = card.querySelector(".pagar");
+
+        if (pagarBoton) {
+            pagarBoton.addEventListener("click", () => {
+                const state = getCardState(card);
+                const seleccionadosTotal = [...state.piso1, ...state.piso2];
+
+                if (seleccionadosTotal.length > 0) {
+                    // Guardar la información de la compra en localStorage
+                    localStorage.setItem('compraPalomasFly', JSON.stringify(card.compraInfo));
+                    
+                    // Redirigir a la página de pago
+                    window.location.href = "pago.html"; 
+                } else {
+                    alert("Por favor, selecciona al menos un asiento para continuar con la compra.");
+                }
+            });
+        }
+    });
+
     document.querySelectorAll(".ver-asientos").forEach(boton => {
         boton.addEventListener("click", () => {
             const card = boton.closest(".card");
@@ -116,12 +139,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const state = getCardState(card);
 
             const isOculto = seccion.classList.toggle("oculto");
-            
+
             boton.textContent = isOculto ? "Ver asientos" : "Cerrar";
-            
+
             if (!isOculto) {
-                card.querySelector('.piso-btn[data-piso="1"]').click(); 
-                actualizarResumen(card);
+                const piso1Btn = card.querySelector('.piso-btn[data-piso="1"]');
+                if (piso1Btn && !piso1Btn.classList.contains("active")) {
+                    piso1Btn.click();
+                } else {
+                    renderizarMapa(mapaContenedor, asientosPiso1, state.piso1);
+                    actualizarResumen(card);
+                }
             }
         });
     });
@@ -141,9 +169,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     const index = currentPisoList.indexOf(num);
 
                     if (index > -1) {
-                        currentPisoList.splice(index, 1); 
+                        currentPisoList.splice(index, 1);
                     } else {
-                        currentPisoList.push(num); 
+                        currentPisoList.push(num);
                     }
 
                     actualizarResumen(card);
@@ -151,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     });
-    
+
     // --- Lógica de cambio de piso ---
     document.querySelectorAll(".card").forEach(card => {
         const pisoBtns = card.querySelectorAll(".piso-btn");
@@ -162,34 +190,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 const nuevoPiso = e.target.dataset.piso;
                 const state = getCardState(card);
 
-                //Marcar el botón como activo
                 pisoBtns.forEach(b => b.classList.remove("active"));
                 e.target.classList.add("active");
 
-                //Actualizar el estado del piso actual
                 state.pisoActual = nuevoPiso;
-                
-                //Obtener la lista de asientos base para el nuevo piso
+
                 const asientosBase = (nuevoPiso === '1') ? asientosPiso1 : asientosPiso2;
-                
-                //Obtener los asientos seleccionados guardados para ese piso
+
                 const asientosSeleccionados = state[`piso${nuevoPiso}`];
 
-                //Renderizar el mapa de asientos con la nueva numeración y selecciones
                 renderizarMapa(mapaContenedor, asientosBase, asientosSeleccionados);
 
             });
         });
-        
-        // Renderizar el estado inicial (Piso 1) para las tarjetas
+
         if (mapaContenedor) {
             renderizarMapa(mapaContenedor, asientosPiso1, getCardState(card).piso1);
         }
     });
 
-    // --- Inicializar la primera tarjeta como abierta si quieres replicar la imagen ---
-    const firstCardButton = document.querySelector('.resultados .card:first-child .ver-asientos');
-    if (firstCardButton && firstCardButton.textContent === "Cerrar") {
-         actualizarResumen(firstCardButton.closest(".card"));
+    const firstCard = document.querySelector('.resultados .card:first-child');
+    const firstCardButton = firstCard ? firstCard.querySelector('.ver-asientos') : null;
+
+    if (firstCard && firstCardButton && firstCardButton.textContent === "Cerrar") {
+        const state = getCardState(firstCard);
+        state.piso1 = ["07", "08", "10"];
+        
+        const mapaContenedor = firstCard.querySelector(".mapa-asientos");
+        renderizarMapa(mapaContenedor, asientosPiso1, state.piso1);
+        
+        actualizarResumen(firstCard);
     }
 });
