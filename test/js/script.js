@@ -1,9 +1,9 @@
 // Validación de contraseñas en registro
-
 document.addEventListener("DOMContentLoaded", () => {
   const formRegistro = document.getElementById("formRegistro");
   const formLogin = document.getElementById("formLogin");
 
+  // --- Registro ---
   if (formRegistro) {
     formRegistro.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -17,15 +17,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
       alert("✅ Registro exitoso");
       formRegistro.reset();
-      window.location.href = "login.html"; // redirige a login
+      window.location.href = "login.html"; // redirige al login
     });
   }
 
+  // --- Login ---
   if (formLogin) {
     formLogin.addEventListener("submit", (e) => {
       e.preventDefault();
-      alert("🔐 Inicio de sesión correcto (ejemplo)");
-      window.location.href = "index.html"; // redirige al home
+      // Redirige directamente a la página principal
+      window.location.href = "index.html";
     });
   }
+});
+
+// --- Redirecciones del menú ---
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("nav ul li a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const href = link.getAttribute("href");
+
+      // Evita recargar la misma página
+      if (href && href !== "#") {
+        window.location.href = href;
+      }
+    });
+  });
 });

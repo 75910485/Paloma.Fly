@@ -1,0 +1,251 @@
+.pago-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Más ancho para el método de pago */
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.metodo-pago h1,
+.resumen-compra-pago h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #222;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Sección de Método de Pago */
+.metodo-pago {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.logos-pago {
+    margin-bottom: 30px;
+}
+
+.logos-pago img {
+    max-width: 100%;
+    height: auto;
+}
+
+.formulario-pago {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario-pago .grupo-tarjeta,
+.formulario-pago .grupo-fecha,
+.formulario-pago .grupo-cvv {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-pago label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.formulario-pago input {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.formulario-pago input#numeroTarjeta {
+    width: 100%;
+}
+
+.formulario-pago input#fechaVencimiento,
+.formulario-pago input#cvv {
+    width: 150px; /* Ajusta el ancho para estos campos */
+}
+
+/* Sección de Resumen de Compra */
+.resumen-compra-pago {
+    background: #f5f7fa; 
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.detalles-resumen p {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #333;
+}
+
+.detalles-resumen hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+}
+
+.pasajero-detalle {
+    line-height: 1.5;
+}
+
+.costo-detalle {
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.precio-final {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.btn-pagar-final {
+    background: #0066cc; 
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pago-container {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario-pago input#fechaVencimiento,
+    .formulario-pago input#cvv {
+        width: 100%;
+    }
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+  background: #fff;
+  padding: 50px 40px 20px;
+  border-top: 1px solid #ddd;
+}
+
+/* Contenedor centrado */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;   
+  margin: 0 auto;      
+}
+
+/* Logo + redes sociales */
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-logo img {
+  height: 170px;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 35px;
+  height: 35px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between; 
+  flex: 2;
+  min-width: 600px;
+  gap: 0; 
+}
+
+/* Cada columna ocupa el mismo espacio */
+
+.footer-col {
+  flex: 1;
+  text-align: left;
+  padding: 0 20px;
+}
+
+/* Rayas azules */
+
+.footer-col:not(:last-child) {
+  border-right: 2px solid #0056b3;
+}
+
+
+/* Títulos y enlaces */
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #0056b3;
+  position: relative;
+}
+
+.footer-col h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #0056b3;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s, padding-left 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #0056b3;
+  padding-left: 5px;
+}
+
+/* Derechos reservados */
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  color: #fff;              
+  margin-top: 30px;
+  padding: 15px 0;
+  background: #0056b3;      
+  border-top: none;         
+}
