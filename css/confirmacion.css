@@ -1,0 +1,91 @@
+/* Estilos para confirmacion */
+
+.confirmacion-card {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.confirmacion-card h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+.confirmacion-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.confirmacion-card p strong {
+    color: #0066cc;
+}
+
+.ruta-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.ruta-info span {
+    padding: 8px 15px;
+    background: #fcf6ed; 
+    border-radius: 4px;
+}
+
+.bus-icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #0066cc;
+}
+
+.bus-icon i {
+    font-size: 24px;
+}
+
+.bus-icon::before, .bus-icon::after {
+    content: '---';
+    color: #aaa;
+    font-weight: normal;
+}
+
+/* Estilos para el QR */
+.qr-container {
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+#qr-code {
+    width: 250px;
+    height: 250px;
+    border: 1px solid #ddd; 
+}
+
+/* Estilos para el botón de descarga */
+.btn-descarga {
+    background: #fcf6ed; 
+    color: #0066cc;
+    border: 1px solid #0066cc;
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn-descarga:hover {
+    background: #e6f0ff;
+}
