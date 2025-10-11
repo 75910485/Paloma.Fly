@@ -1,4 +1,5 @@
 // Validación de contraseñas en registro
+
 document.addEventListener("DOMContentLoaded", () => {
   const formRegistro = document.getElementById("formRegistro");
   const formLogin = document.getElementById("formLogin");
