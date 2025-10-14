@@ -330,19 +330,20 @@ nav a:hover::after {
 /* ---------- DESTINOS ---------- */
 
 .destinos {
-  text-align: center;
+  text-align: center; /* Centra el texto (el título) */
   padding: 60px 20px;
 }
 
 .destinos h2 {
-  font-size: 36px;           
-  font-weight: 700;           
-  font-style: italic;         
-  color: #0056b3;             
-  letter-spacing: 1px;        
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.15); 
+  font-size: 36px;
+  font-weight: 700;
+  font-style: italic; 
+  color: #0056b3;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+  /* Añadido: Margen para separar el título de las tarjetas */
+  margin-bottom: 40px; 
 }
-
 
 
 .blue {
@@ -351,9 +352,13 @@ nav a:hover::after {
 
 .cards {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* CLAVE 1: Centra las tarjetas horizontalmente */
   gap: 30px;
   flex-wrap: wrap;
+  
+  /* CLAVE 2: Limita el ancho del bloque de tarjetas y lo centra en la página */
+  max-width: 1200px; 
+  margin: 0 auto;
 }
 
 .card {
@@ -364,6 +369,10 @@ nav a:hover::after {
   width: 250px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card p {
+  text-align:left;
 }
 
 .card img {

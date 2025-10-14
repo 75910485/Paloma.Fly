@@ -5,52 +5,80 @@ body {
     color: #222;
 }
 
-/* --- Navbar --- */
 header {
-    background: #fff;
-    border-bottom: 1px solid #ddd;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 40px; 
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
 }
 
 .logo img {
-    height: 50px; 
-    width: auto;
+  height: 70px;
+  width: auto;
+  display: block;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
+  list-style: none;
+  display: flex;
+  gap: 50px; /* separación entre los links */
+  margin: 0;
+  padding: 0;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #000;
-    font-weight: 500;
-    padding-bottom: 5px; 
+nav ul li {
+  display: inline-block;
 }
 
-nav ul li a.active {
-    border-bottom: 3px solid #0066cc; 
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
 }
+
+/* Subrayado animado en hover */
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #0056b3;
+  transition: width 0.3s;
+}
+
+nav a:hover {
+  color: #0056b3;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Botón */
 
 .btn {
-    background: #0066cc;
-    color: white;
-    padding: 8px 18px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
+  background: #0056b3;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background: #004494;
 }
 
 /* --- Busqueda (Barra Superior) --- */

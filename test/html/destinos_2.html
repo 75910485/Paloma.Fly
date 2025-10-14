@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palomas Fly - Destinos</title>
+    <title>Palomas Fly - Destinos Ica</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/destinos.css">
-    <script defer src="../js/destinos.js"></script>
-    
+    <link rel="stylesheet" href="../css/destinos.css"> 
+    <script defer src="../js/destinos_2.js"></script> 
+    <link rel="icon" href="../img/favicon-32x32.png" type="image/x-icon">
+
 </head>
 <body>
 <header>
@@ -38,8 +39,7 @@
                 <option>Lima (Atocongo)</option>
             </select>
             <select>
-                <option>Arequipa</option>
-            </select>
+                <option>Ica</option> </select>
             <input type="text" value="10-Sep-25" onfocus="(this.type='date')" onblur="(this.type='text')" />
             <input type="text" value="11-Sep-25" onfocus="(this.type='date')" onblur="(this.type='text')" />
             <button class="buscar">Buscar Pasajes</button>
@@ -50,28 +50,24 @@
             <div class="card">
                 <div class="info-viaje">
                     <div class="izquierda">
-                        <h3><i class="fa-solid fa-sun" style="color:#f9a721;"></i> Arequipa</h3>
-                        <p>Lima(Atocongo) → Arequipa</p>
-                        <span>2:00 PM → 6:00 AM</span>
+                        <h3><i class="fa-solid fa-sun" style="color:#f9a721;"></i> Ica</h3> <p>Lima(Atocongo) → Ica</p>
+                        <span>6:00 AM → 12:30 PM</span> 
                     </div>
                     <div class="centro">
-                        <span class="duracion">16 hrs 35 mins</span>
-                    </div>
+                        <span class="duracion">6 hrs 30 mins</span> </div>
                     <div class="derecha">
                         <span class="precio">Desde: S/39</span>
-                        <button class="ver-asientos">Cerrar</button>
-                    </div>
+                        <button class="ver-asientos">Ver asientos</button> </div>
                 </div>
 
-                <div class="asientos">
-                    <div class="asientos-contenedor">
+                <div class="asientos oculto"> <div class="asientos-contenedor">
                         <div class="lado-izq">
                             <div class="piso">
                                 <button class="piso-btn active" data-piso="1">1er piso</button>
                                 <button class="piso-btn" data-piso="2">2do piso</button>
                             </div>
                             <div class="mapa-asientos">
-                                </div>
+                            </div>
                         </div>
 
                         <div class="lado-der">
@@ -93,13 +89,11 @@
             <div class="card">
                 <div class="info-viaje">
                     <div class="izquierda">
-                        <h3><i class="fa-solid fa-sun" style="color:#f9a721;"></i> Arequipa</h3>
-                        <p>Lima(Atocongo) → Arequipa</p>
-                        <span>4:30 PM → 8:30 AM</span>
+                        <h3><i class="fa-solid fa-cloud-sun" style="color:#f9a721;"></i> Ica</h3> <p>Lima(Atocongo) → Ica</p>
+                        <span>1:00 PM → 7:30 PM</span>
                     </div>
                     <div class="centro">
-                        <span class="duracion">16 hrs 35 mins</span>
-                    </div>
+                        <span class="duracion">6 hrs 30 mins</span> </div>
                     <div class="derecha">
                         <span class="precio">Desde: S/39</span>
                         <button class="ver-asientos">Ver asientos</button>
@@ -113,7 +107,7 @@
                                 <button class="piso-btn" data-piso="2">2do piso</button>
                             </div>
                             <div class="mapa-asientos">
-                                </div>
+                            </div>
                         </div>
 
                         <div class="lado-der">
@@ -135,13 +129,11 @@
             <div class="card">
                 <div class="info-viaje">
                     <div class="izquierda">
-                        <h3><i class="fa-solid fa-moon" style="color:#003366;"></i> Arequipa</h3>
-                        <p>Lima(Atocongo) → Arequipa</p>
-                        <span>7:00 PM → 11:00 AM</span>
+                        <h3><i class="fa-solid fa-moon" style="color:#003366;"></i> Ica</h3> <p>Lima(Atocongo) → Ica</p>
+                        <span>11:00 PM → 5:30 AM</span>
                     </div>
                     <div class="centro">
-                        <span class="duracion">16 hrs 35 mins</span>
-                    </div>
+                        <span class="duracion">6 hrs 30 mins</span> </div>
                     <div class="derecha">
                         <span class="precio">Desde: S/39</span>
                         <button class="ver-asientos">Ver asientos</button>
@@ -155,7 +147,7 @@
                                 <button class="piso-btn" data-piso="2">2do piso</button>
                             </div>
                             <div class="mapa-asientos">
-                                </div>
+                            </div>
                         </div>
 
                         <div class="lado-der">
@@ -173,92 +165,8 @@
                     </div>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="info-viaje">
-                    <div class="izquierda">
-                        <h3><i class="fa-solid fa-person-hiking" style="color:#0066cc;"></i> Arequipa</h3>
-                        <p>Lima(Atocongo) → Arequipa</p>
-                        <span>8:00 AM → 10:00 PM</span>
-                    </div>
-                    <div class="centro">
-                        <span class="duracion">14 hrs</span>
-                    </div>
-                    <div class="derecha">
-                        <span class="precio">Desde: S/39</span>
-                        <button class="ver-asientos">Ver asientos</button>
-                    </div>
-                </div>
-                <div class="asientos oculto">
-                    <div class="asientos-contenedor">
-                        <div class="lado-izq">
-                            <div class="piso">
-                                <button class="piso-btn active" data-piso="1">1er piso</button>
-                                <button class="piso-btn" data-piso="2">2do piso</button>
-                            </div>
-                            <div class="mapa-asientos">
-                                </div>
-                        </div>
-
-                        <div class="lado-der">
-                            <div class="resumen-compra">
-                                <p class="precio-texto">Precio total:</p>
-                                <span class="precio-total">S/0.00</span>
-                                <p class="asientos-texto">*0 asientos</p>
-                            </div>
-                            
-                            <p class="a-bordo">A bordo</p>
-                            <div class="seleccionados">Ninguno</div>
-                            
-                            <button class="pagar">PAGAR</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="info-viaje">
-                    <div class="izquierda">
-                        <h3><i class="fa-solid fa-moon" style="color:#003366;"></i> Arequipa</h3>
-                        <p>Lima(Atocongo) → Arequipa</p>
-                        <span>9:00 PM → 1:00 PM</span>
-                    </div>
-                    <div class="centro">
-                        <span class="duracion">16 hrs 35 mins</span>
-                    </div>
-                    <div class="derecha">
-                        <span class="precio">Desde: S/39</span>
-                        <button class="ver-asientos">Ver asientos</button>
-                    </div>
-                </div>
-                <div class="asientos oculto">
-                    <div class="asientos-contenedor">
-                        <div class="lado-izq">
-                            <div class="piso">
-                                <button class="piso-btn active" data-piso="1">1er piso</button>
-                                <button class="piso-btn" data-piso="2">2do piso</button>
-                            </div>
-                            <div class="mapa-asientos">
-                                </div>
-                        </div>
-
-                        <div class="lado-der">
-                            <div class="resumen-compra">
-                                <p class="precio-texto">Precio total:</p>
-                                <span class="precio-total">S/0.00</span>
-                                <p class="asientos-texto">*0 asientos</p>
-                            </div>
-                            
-                            <p class="a-bordo">A bordo</p>
-                            <div class="seleccionados">Ninguno</div>
-                            
-                            <button class="pagar">PAGAR</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
+            
+            </section>
     </main>
     
 <!-- FOOTER -->
@@ -313,6 +221,7 @@
     <p>&copy; 2025 Paloma Fit. Todos los derechos reservados.</p>
 </div>
 </footer>
+
 
 </body>
 </html>
