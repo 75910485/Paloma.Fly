@@ -1,0 +1,128 @@
+.pago-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Más ancho para el método de pago */
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.metodo-pago h1,
+.resumen-compra-pago h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #222;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Sección de Método de Pago */
+.metodo-pago {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.logos-pago {
+    margin-bottom: 30px;
+}
+
+.logos-pago img {
+    max-width: 100%;
+    height: auto;
+}
+
+.formulario-pago {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario-pago .grupo-tarjeta,
+.formulario-pago .grupo-fecha,
+.formulario-pago .grupo-cvv {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-pago label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.formulario-pago input {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.formulario-pago input#numeroTarjeta {
+    width: 100%;
+}
+
+.formulario-pago input#fechaVencimiento,
+.formulario-pago input#cvv {
+    width: 150px; /* Ajusta el ancho para estos campos */
+}
+
+/* Sección de Resumen de Compra */
+.resumen-compra-pago {
+    background: #f5f7fa; 
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.detalles-resumen p {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #333;
+}
+
+.detalles-resumen hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+}
+
+.pasajero-detalle {
+    line-height: 1.5;
+}
+
+.costo-detalle {
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.precio-final {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.btn-pagar-final {
+    background: #0066cc; 
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pago-container {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario-pago input#fechaVencimiento,
+    .formulario-pago input#cvv {
+        width: 100%;
+    }
+}

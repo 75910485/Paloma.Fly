@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palomas Fly - Destinos</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/destinos.css">
+    <script defer src="../js/destinos.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="../img/logo.fly.png" alt="Palomas Fly"></a> 
+            </div>
+            <ul>
+                <li><a href="../">Inicio</a></li>
+                <li><a class="active" href="#">Destinos</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="../login.html">Login</a></li>
+            </ul>
+            <a href="../registro.html" class="btn">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="busqueda">
+            <select>
+                <option>Lima (Atocongo)</option>
+            </select>
+            <select>
+                <option>Arequipa</option>
+            </select>
+            <input type="text" value="10-Sep-25" onfocus="(this.type='date')" onblur="(this.type='text')" />
+            <input type="text" value="11-Sep-25" onfocus="(this.type='date')" onblur="(this.type='text')" />
+            <button class="buscar">Buscar Pasajes</button>
+        </section>
+
+        <section class="resultados">
+
+            <div class="card">
+                <div class="info-viaje">
+                    <div class="izquierda">
+                        <h3><i class="fa-solid fa-sun" style="color:#f9a721;"></i> Arequipa</h3>
+                        <p>Lima(Atocongo) → Arequipa</p>
+                        <span>2:00 PM → 6:00 AM</span>
+                    </div>
+                    <div class="centro">
+                        <span class="duracion">16 hrs 35 mins</span>
+                    </div>
+                    <div class="derecha">
+                        <span class="precio">Desde: S/39</span>
+                        <button class="ver-asientos">Cerrar</button>
+                    </div>
+                </div>
+
+                <div class="asientos">
+                    <div class="asientos-contenedor">
+                        <div class="lado-izq">
+                            <div class="piso">
+                                <button class="piso-btn active" data-piso="1">1er piso</button>
+                                <button class="piso-btn" data-piso="2">2do piso</button>
+                            </div>
+                            <div class="mapa-asientos">
+                                </div>
+                        </div>
+
+                        <div class="lado-der">
+                            <div class="resumen-compra">
+                                <p class="precio-texto">Precio total:</p>
+                                <span class="precio-total">S/0.00</span>
+                                <p class="asientos-texto">*0 asientos</p>
+                            </div>
+                            
+                            <p class="a-bordo">A bordo</p>
+                            <div class="seleccionados">Ninguno</div>
+                            
+                            <button class="pagar">PAGAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="info-viaje">
+                    <div class="izquierda">
+                        <h3><i class="fa-solid fa-sun" style="color:#f9a721;"></i> Arequipa</h3>
+                        <p>Lima(Atocongo) → Arequipa</p>
+                        <span>4:30 PM → 8:30 AM</span>
+                    </div>
+                    <div class="centro">
+                        <span class="duracion">16 hrs 35 mins</span>
+                    </div>
+                    <div class="derecha">
+                        <span class="precio">Desde: S/39</span>
+                        <button class="ver-asientos">Ver asientos</button>
+                    </div>
+                </div>
+                <div class="asientos oculto">
+                    <div class="asientos-contenedor">
+                        <div class="lado-izq">
+                            <div class="piso">
+                                <button class="piso-btn active" data-piso="1">1er piso</button>
+                                <button class="piso-btn" data-piso="2">2do piso</button>
+                            </div>
+                            <div class="mapa-asientos">
+                                </div>
+                        </div>
+
+                        <div class="lado-der">
+                            <div class="resumen-compra">
+                                <p class="precio-texto">Precio total:</p>
+                                <span class="precio-total">S/0.00</span>
+                                <p class="asientos-texto">*0 asientos</p>
+                            </div>
+                            
+                            <p class="a-bordo">A bordo</p>
+                            <div class="seleccionados">Ninguno</div>
+                            
+                            <button class="pagar">PAGAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="info-viaje">
+                    <div class="izquierda">
+                        <h3><i class="fa-solid fa-moon" style="color:#003366;"></i> Arequipa</h3>
+                        <p>Lima(Atocongo) → Arequipa</p>
+                        <span>7:00 PM → 11:00 AM</span>
+                    </div>
+                    <div class="centro">
+                        <span class="duracion">16 hrs 35 mins</span>
+                    </div>
+                    <div class="derecha">
+                        <span class="precio">Desde: S/39</span>
+                        <button class="ver-asientos">Ver asientos</button>
+                    </div>
+                </div>
+                <div class="asientos oculto">
+                    <div class="asientos-contenedor">
+                        <div class="lado-izq">
+                            <div class="piso">
+                                <button class="piso-btn active" data-piso="1">1er piso</button>
+                                <button class="piso-btn" data-piso="2">2do piso</button>
+                            </div>
+                            <div class="mapa-asientos">
+                                </div>
+                        </div>
+
+                        <div class="lado-der">
+                            <div class="resumen-compra">
+                                <p class="precio-texto">Precio total:</p>
+                                <span class="precio-total">S/0.00</span>
+                                <p class="asientos-texto">*0 asientos</p>
+                            </div>
+                            
+                            <p class="a-bordo">A bordo</p>
+                            <div class="seleccionados">Ninguno</div>
+                            
+                            <button class="pagar">PAGAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="info-viaje">
+                    <div class="izquierda">
+                        <h3><i class="fa-solid fa-person-hiking" style="color:#0066cc;"></i> Arequipa</h3>
+                        <p>Lima(Atocongo) → Arequipa</p>
+                        <span>8:00 AM → 10:00 PM</span>
+                    </div>
+                    <div class="centro">
+                        <span class="duracion">14 hrs</span>
+                    </div>
+                    <div class="derecha">
+                        <span class="precio">Desde: S/39</span>
+                        <button class="ver-asientos">Ver asientos</button>
+                    </div>
+                </div>
+                <div class="asientos oculto">
+                    <div class="asientos-contenedor">
+                        <div class="lado-izq">
+                            <div class="piso">
+                                <button class="piso-btn active" data-piso="1">1er piso</button>
+                                <button class="piso-btn" data-piso="2">2do piso</button>
+                            </div>
+                            <div class="mapa-asientos">
+                                </div>
+                        </div>
+
+                        <div class="lado-der">
+                            <div class="resumen-compra">
+                                <p class="precio-texto">Precio total:</p>
+                                <span class="precio-total">S/0.00</span>
+                                <p class="asientos-texto">*0 asientos</p>
+                            </div>
+                            
+                            <p class="a-bordo">A bordo</p>
+                            <div class="seleccionados">Ninguno</div>
+                            
+                            <button class="pagar">PAGAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="info-viaje">
+                    <div class="izquierda">
+                        <h3><i class="fa-solid fa-moon" style="color:#003366;"></i> Arequipa</h3>
+                        <p>Lima(Atocongo) → Arequipa</p>
+                        <span>9:00 PM → 1:00 PM</span>
+                    </div>
+                    <div class="centro">
+                        <span class="duracion">16 hrs 35 mins</span>
+                    </div>
+                    <div class="derecha">
+                        <span class="precio">Desde: S/39</span>
+                        <button class="ver-asientos">Ver asientos</button>
+                    </div>
+                </div>
+                <div class="asientos oculto">
+                    <div class="asientos-contenedor">
+                        <div class="lado-izq">
+                            <div class="piso">
+                                <button class="piso-btn active" data-piso="1">1er piso</button>
+                                <button class="piso-btn" data-piso="2">2do piso</button>
+                            </div>
+                            <div class="mapa-asientos">
+                                </div>
+                        </div>
+
+                        <div class="lado-der">
+                            <div class="resumen-compra">
+                                <p class="precio-texto">Precio total:</p>
+                                <span class="precio-total">S/0.00</span>
+                                <p class="asientos-texto">*0 asientos</p>
+                            </div>
+                            
+                            <p class="a-bordo">A bordo</p>
+                            <div class="seleccionados">Ninguno</div>
+                            
+                            <button class="pagar">PAGAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>
